@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+* body {
+  display: flex;
+  background-color: #3a4764;
+  justify-content: center;
+}
+* body main {
+  max-width: 570px;
+  padding: 28px 24px 31px 24px;
+}
+@media only screen and (min-width: 1024px) {
+  * body main {
+    padding: 96px 0px 0px 0px;
+  }
+}
+* body main header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+* body main header h1 {
+  font-size: 32px;
+  line-height: 36px;
+}
+* body main header .themeBox {
+  font-size: 12px;
+  line-height: 13px;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: ". numbers" "theme toggle";
+}
+* body main header .themeBox .theme {
+  grid-area: theme;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  justify-self: flex-end;
+  align-self: center;
+}
+* body main header .themeBox .numbers {
+  grid-area: numbers;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+* body main header .themeBox .toggle {
+  position: relative;
+  grid-area: toggle;
+  width: 71px;
+  height: 26px;
+  background-color: #232c43;
+  border-radius: 13px;
+}
+* body main header .themeBox .toggle .circle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: #d03f2f;
+}
+* body main input {
+  margin: 32px 0px 24px 0px;
+  width: 100%;
+  height: 88px;
+  background-color: #182034;
+  color: white;
+  border-radius: 10px;
+  text-align: right;
+  font-size: 32px;
+  line-height: 36px;
+  padding: 26px 24px;
+  border: none;
+}
+* body main .keypad {
+  padding: 22px;
+  border-radius: 10px;
+  background-color: #232c43;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 13px;
+}
+* body main .keypad button {
+  padding: 10px 10px 15px;
+  background-color: #eae3dc;
+  color: #444b5a;
+  box-shadow: inset 0px -4px 0px #b4a597;
+  border: none;
+  border-radius: 5px;
+  font-size: 28px;
+  line-height: 39px;
+}
+* body main .keypad .del,
+* body main .keypad .reset {
+  background-color: #637097;
+  box-shadow: inset 0px -4px 0px #404e72;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: white;
+}
+* body main .keypad .reset {
+  grid-column: 1/3;
+  padding: 9px 22px 15px;
+}
+* body main .keypad .equally {
+  padding: 9px 22px 15px;
+  grid-column: 3/5;
+  background-color: #d03f2f;
+  box-shadow: inset 0px -4px 0px #93261a;
+  font-size: 16px;
+  line-height: 18px;
+  color: white;
+}
+@media (prefers-color-scheme: light) {
+  * .light {
+    background-color: #e6e6e6;
+  }
+  * .light main header {
+    color: #35352c;
+  }
+  * .light main input {
+    background-color: #ededed;
+    color: #35352c;
+  }
+  * .light main input .circle {
+    background-color: #ca5502;
+  }
+  * .light main .keypad {
+    background-color: #d1cccc;
+  }
+  * .light main .keypad button {
+    background-color: #e5e4e1;
+    color: #35352c;
+    box-shadow: inset 0px -4px 0px #a69d91;
+  }
+  * .light main .keypad .del,
+* .light main .keypad .reset {
+    background-color: #377f86;
+    box-shadow: inset 0px -4px 0px #1b5f65;
+    color: white;
+  }
+  * .light main .keypad .equally {
+    background-color: #ca5502;
+    box-shadow: inset 0px -4px 0px #893901;
+    color: white;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  * .dark {
+    background-color: #160628;
+  }
+  * .dark main header {
+    color: #ffe53d;
+  }
+  * .dark main input {
+    background-color: #1d0934;
+    color: #ffe53d;
+  }
+  * .dark main input .circle {
+    background-color: #00e0d1;
+  }
+  * .dark main .keypad {
+    background-color: #1d0934;
+  }
+  * .dark main .keypad button {
+    background-color: #341c4f;
+    color: #ffe53d;
+    box-shadow: inset 0px -4px 0px #871c9c;
+  }
+  * .dark main .keypad .del,
+* .dark main .keypad .reset {
+    background-color: #58077d;
+    box-shadow: inset 0px -4px 0px #bc15f4;
+    color: white;
+  }
+  * .dark main .keypad .equally {
+    background-color: #00e0d1;
+    box-shadow: inset 0px -4px 0px #6cf9f2;
+    color: #1b2428;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

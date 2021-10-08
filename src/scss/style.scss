@@ -1,0 +1,201 @@
+@use './variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fontFamily;
+  body {
+    display: flex;
+    background-color: map-get($color, theme1, background, main);
+    justify-content: center;
+    main {
+      max-width: 570px;
+      padding: 28px 24px 31px 24px;
+      @media only screen and (min-width: 1024px) {
+        padding: 96px 0px 0px 0px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        color: map-get($color, theme1, text, white);
+        h1 {
+          font-size: map-get($font, size, heading);
+          line-height: map-get($font, height, heading);
+        }
+        .themeBox {
+          font-size: map-get($font, size, theme);
+          line-height: map-get($font, height, theme);
+          display: grid;
+          column-gap: 16px;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-areas:
+            '. numbers'
+            'theme toggle';
+          .theme {
+            grid-area: theme;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            justify-self: flex-end;
+            align-self: center;
+          }
+          .numbers {
+            grid-area: numbers;
+            display: flex;
+            justify-content: space-around;
+            align-self: center;
+          }
+          .toggle {
+            position: relative;
+            grid-area: toggle;
+            width: 71px;
+            height: 26px;
+            background-color: map-get($color, theme1, background, keypad);
+            border-radius: 13px;
+            .circle {
+              position: absolute;
+              top: 5px;
+              left: 5px;
+              height: 16px;
+              width: 16px;
+              border-radius: 50%;
+              background-color: map-get($color, theme1, key, redKeyBackground);
+            }
+          }
+        }
+      }
+      input {
+        margin: 32px 0px 24px 0px;
+        width: 100%;
+        height: 88px;
+        background-color: map-get($color, theme1, background, result);
+        color: map-get($color, theme1, text, white);
+        border-radius: 10px;
+        text-align: right;
+        font-size: map-get($font, size, heading);
+        line-height: map-get($font, height, heading);
+        padding: 26px 24px;
+        border: none;
+      }
+      .keypad {
+        padding: 22px;
+        border-radius: 10px;
+        background-color: map-get($color, theme1, background, keypad);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 13px;
+        button {
+          padding: 10px 10px 15px;
+          background-color: map-get($color, theme1, key, grayKeyBackground);
+          color: map-get($color, theme1, text, darkBlueKey);
+          box-shadow: map-get($color, theme1, key, grayKeyShadow);
+          border: none;
+          border-radius: 5px;
+          font-size: map-get($font, size, mobileNumber);
+          line-height: map-get($font, height, mobileNumber);
+        }
+        .del,
+        .reset {
+          background-color: map-get($color, theme1, key, blueKeyBackground);
+          box-shadow: map-get($color, theme1, key, blueKeyShadow);
+          font-size: map-get($font, size, mobileSecond);
+          line-height: map-get($font, height, mobileSecond);
+          text-transform: uppercase;
+          color: map-get($color, theme1, text, white);
+        }
+        .reset {
+          grid-column: 1/3;
+          padding: 9px 22px 15px;
+        }
+        .equally {
+          padding: 9px 22px 15px;
+          grid-column: 3/5;
+          background-color: map-get($color, theme1, key, redKeyBackground);
+          box-shadow: map-get($color, theme1, key, redKeyShadow);
+          font-size: map-get($font, size, mobileSecond);
+          line-height: map-get($font, height, mobileSecond);
+          color: map-get($color, theme1, text, white);
+        }
+      }
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    .light {
+      background-color: map-get($color, theme2, background, main);
+      main {
+        header {
+          color: map-get($color, theme2, text, yellowKey);
+        }
+        input {
+          background-color: map-get($color, theme2, background, result);
+          color: map-get($color, theme2, text, yellowKey);
+          .circle {
+            background-color: map-get($color, theme2, key, orangeKeyBackground);
+          }
+        }
+        .keypad {
+          background-color: map-get($color, theme2, background, keypad);
+          button {
+            background-color: map-get($color, theme2, key, grayKeyBackground);
+            color: map-get($color, theme2, text, yellowKey);
+            box-shadow: map-get($color, theme2, key, grayKeyShadow);
+          }
+          .del,
+          .reset {
+            background-color: map-get($color, theme2, key, blueKeyBackground);
+            box-shadow: map-get($color, theme2, key, blueKeyShadow);
+            color: map-get($color, theme2, text, white);
+          }
+          .equally {
+            background-color: map-get($color, theme2, key, orangeKeyBackground);
+            box-shadow: map-get($color, theme2, key, orangeKeyShadow);
+            color: map-get($color, theme2, text, white);
+          }
+        }
+      }
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .dark {
+      background-color: map-get($color, theme3, background, main);
+      main {
+        header {
+          color: map-get($color, theme3, text, yellowKey);
+        }
+        input {
+          background-color: map-get($color, theme3, background, keypad);
+          color: map-get($color, theme3, text, yellowKey);
+          .circle {
+            background-color: map-get($color, theme3, key, cyanKeyBackground);
+          }
+        }
+        .keypad {
+          background-color: map-get($color, theme3, background, keypad);
+          button {
+            background-color: map-get($color, theme3, key, violetKeyBackground);
+            color: map-get($color, theme3, text, yellowKey);
+            box-shadow: map-get($color, theme3, key, violetKeyShadow);
+          }
+          .del,
+          .reset {
+            background-color: map-get(
+              $color,
+              theme3,
+              key,
+              magentaKeyBackground
+            );
+            box-shadow: map-get($color, theme3, key, magentaKeyShadow);
+            color: map-get($color, theme3, text, white);
+          }
+          .equally {
+            background-color: map-get($color, theme3, key, cyanKeyBackground);
+            box-shadow: map-get($color, theme3, key, cyanKeyShadow);
+            color: map-get($color, theme3, text, blueKey);
+          }
+        }
+      }
+    }
+  }
+}

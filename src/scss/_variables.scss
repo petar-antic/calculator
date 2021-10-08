@@ -1,0 +1,90 @@
+// // Typography
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+// Font
+$fontFamily: 'Spartan', sans-serif;
+
+$font: (
+  size: (
+    mobileNumber: 28px,
+    mobileSecond: 16px,
+    heading: 32px,
+    theme: 12px,
+    desktopResult: 48px,
+    desktopSecond: 20px,
+  ),
+  height: (
+    mobileNumber: 39px,
+    mobileSecond: 18px,
+    heading: 36px,
+    theme: 13px,
+  ),
+);
+
+// Colors
+
+$color: (
+  ////////////// Theme 1
+  theme1:
+    (
+      background: (
+        main: hsl(222, 26%, 31%),
+        keypad: hsl(223, 31%, 20%),
+        result: hsl(224, 36%, 15%),
+      ),
+      key: (
+        blueKeyBackground: hsl(225, 21%, 49%),
+        blueKeyShadow: inset 0px -4px 0px hsl(224, 28%, 35%),
+        redKeyBackground: hsl(6, 63%, 50%),
+        redKeyShadow: inset 0px -4px 0px hsl(6, 70%, 34%),
+        grayKeyBackground: hsl(30, 25%, 89%),
+        grayKeyShadow: inset 0px -4px 0px hsl(28, 16%, 65%),
+      ),
+      text: (
+        darkBlueKey: hsl(221, 14%, 31%),
+        white: hsl(0, 0, 100%),
+      ),
+    ),
+  ////////////// Theme 2
+  theme2:
+    (
+      background: (
+        main: hsl(0, 0%, 90%),
+        keypad: hsl(0, 5%, 81%),
+        result: hsl(0, 0%, 93%),
+      ),
+      key: (
+        blueKeyBackground: hsl(185, 42%, 37%),
+        blueKeyShadow: inset 0px -4px 0px hsl(185, 58%, 25%),
+        orangeKeyBackground: hsl(25, 98%, 40%),
+        orangeKeyShadow: inset 0px -4px 0px hsl(25, 99%, 27%),
+        grayKeyBackground: hsl(45, 7%, 89%),
+        grayKeyShadow: inset 0px -4px 0px hsl(35, 11%, 61%),
+      ),
+      text: (
+        yellowKey: hsl(60, 10%, 19%),
+        white: hsl(0, 0, 100%),
+      ),
+    ),
+  ////////////// Theme 3
+  theme3:
+    (
+      background: (
+        main: hsl(268, 75%, 9%),
+        keypad: hsl(268, 71%, 12%),
+      ),
+      key: (
+        magentaKeyBackground: hsl(281, 89%, 26%),
+        magentaKeyShadow: inset 0px -4px 0px hsl(285, 91%, 52%),
+        cyanKeyBackground: hsl(176, 100%, 44%),
+        cyanKeyShadow: inset 0px -4px 0px hsl(177, 92%, 70%),
+        violetKeyBackground: hsl(268, 47%, 21%),
+        violetKeyShadow: inset 0px -4px 0px hsl(290, 70%, 36%),
+      ),
+      text: (
+        yellowKey: hsl(52, 100%, 62%),
+        blueKey: hsl(198, 20%, 13%),
+        white: hsl(0, 0, 100%),
+      ),
+    )
+);
