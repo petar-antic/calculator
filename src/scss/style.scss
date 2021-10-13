@@ -10,7 +10,7 @@
     background-color: map-get($color, theme1, background, main);
     justify-content: center;
     main {
-      max-width: 570px;
+      max-width: 540px;
       padding: 28px 24px 31px 24px;
       @media only screen and (min-width: 1024px) {
         padding: 96px 0px 0px 0px;
@@ -22,6 +22,9 @@
         h1 {
           font-size: map-get($font, size, heading);
           line-height: map-get($font, height, heading);
+          @media only screen and (min-width: 1024px) {
+            align-self: flex-end;
+          }
         }
         .themeBox {
           font-size: map-get($font, size, theme);
@@ -45,95 +48,200 @@
             display: flex;
             justify-content: space-around;
             align-self: center;
+            margin-left: 3px;
+            .notVisible {
+              visibility: hidden;
+            }
           }
           .toggle {
             position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             grid-area: toggle;
             width: 71px;
             height: 26px;
             background-color: map-get($color, theme1, background, keypad);
             border-radius: 13px;
-            .circle {
-              position: absolute;
-              top: 5px;
-              left: 5px;
+            .circleBox1,
+            .circleBox2,
+            .circleBox3 {
               height: 16px;
               width: 16px;
-              border-radius: 50%;
-              background-color: map-get($color, theme1, key, redKeyBackground);
+              @media only screen and (min-width: 1024px) {
+                cursor: $cursor;
+              }
+              .circle1,
+              .circle2,
+              .circle3 {
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+              }
+              .circle1 {
+                background-color: map-get(
+                  $color,
+                  theme1,
+                  key,
+                  redKeyBackground
+                );
+                @media only screen and (min-width: 1024px) {
+                  &:hover {
+                    background-color: map-get(
+                      $color,
+                      theme1,
+                      background,
+                      circleHover
+                    );
+                    cursor: $cursor;
+                  }
+                }
+              }
+              .notVisible {
+                visibility: hidden;
+              }
             }
           }
         }
       }
-      input {
-        margin: 32px 0px 24px 0px;
-        width: 100%;
-        height: 88px;
-        background-color: map-get($color, theme1, background, result);
-        color: map-get($color, theme1, text, white);
-        border-radius: 10px;
-        text-align: right;
-        font-size: map-get($font, size, heading);
-        line-height: map-get($font, height, heading);
-        padding: 26px 24px;
-        border: none;
-      }
-      .keypad {
-        padding: 22px;
-        border-radius: 10px;
-        background-color: map-get($color, theme1, background, keypad);
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        gap: 13px;
-        button {
-          padding: 10px 10px 15px;
-          background-color: map-get($color, theme1, key, grayKeyBackground);
-          color: map-get($color, theme1, text, darkBlueKey);
-          box-shadow: map-get($color, theme1, key, grayKeyShadow);
+      .calculator {
+        input {
+          margin: 32px 0px 24px 0px;
+          width: 100%;
+          background-color: map-get($color, theme1, background, result);
+          color: map-get($color, theme1, text, white);
+          border-radius: 10px;
+          text-align: right;
+          font-size: map-get($font, size, heading);
+          line-height: map-get($font, height, heading);
+          padding: 26px 24px;
           border: none;
-          border-radius: 5px;
-          font-size: map-get($font, size, mobileNumber);
-          line-height: map-get($font, height, mobileNumber);
+          outline: none;
+          caret-color: transparent;
+          @media only screen and (min-width: 1024px) {
+            font-size: map-get($font, size, desktopResult);
+            padding: 38px 32px 36px;
+          }
         }
-        .del,
-        .reset {
-          background-color: map-get($color, theme1, key, blueKeyBackground);
-          box-shadow: map-get($color, theme1, key, blueKeyShadow);
-          font-size: map-get($font, size, mobileSecond);
-          line-height: map-get($font, height, mobileSecond);
-          text-transform: uppercase;
-          color: map-get($color, theme1, text, white);
-        }
-        .reset {
-          grid-column: 1/3;
-          padding: 9px 22px 15px;
-        }
-        .equally {
-          padding: 9px 22px 15px;
-          grid-column: 3/5;
-          background-color: map-get($color, theme1, key, redKeyBackground);
-          box-shadow: map-get($color, theme1, key, redKeyShadow);
-          font-size: map-get($font, size, mobileSecond);
-          line-height: map-get($font, height, mobileSecond);
-          color: map-get($color, theme1, text, white);
+        .keypad {
+          padding: 22px;
+          border-radius: 10px;
+          background-color: map-get($color, theme1, background, keypad);
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(5, 1fr);
+          gap: 13px;
+          @media only screen and (min-width: 1024px) {
+            padding: 32px 32px 32px 30px;
+            gap: 24px 25px;
+          }
+          button {
+            padding: 10px 10px 15px;
+            background-color: map-get($color, theme1, key, grayKeyBackground);
+            color: map-get($color, theme1, text, darkBlueKey);
+            box-shadow: map-get($color, theme1, key, grayKeyShadow);
+            border: none;
+            border-radius: 5px;
+            font-size: map-get($font, size, mobileNumber);
+            line-height: map-get($font, height, mobileNumber);
+            font-weight: bold;
+            @media only screen and (min-width: 1024px) {
+              padding: 10px 13px 14px;
+              font-size: map-get($font, size, heading);
+              line-height: map-get($font, height, heading);
+              &:hover {
+                background-color: map-get($color, theme1, key, buttonHover);
+                cursor: $cursor;
+              }
+            }
+          }
+          .del,
+          .reset {
+            background-color: map-get($color, theme1, key, blueKeyBackground);
+            box-shadow: map-get($color, theme1, key, blueKeyShadow);
+            font-size: map-get($font, size, mobileSecond);
+            line-height: map-get($font, height, mobileSecond);
+            text-transform: uppercase;
+            color: map-get($color, theme1, text, white);
+            @media only screen and (min-width: 1024px) {
+              font-size: map-get($font, size, desktopSecond);
+              line-height: map-get($font, height, desktopSecond);
+              &:hover {
+                background-color: map-get($color, theme1, key, resetHover);
+                cursor: $cursor;
+              }
+            }
+          }
+          .del {
+            @media only screen and (min-width: 1024px) {
+              padding: 11px 13px 13px;
+            }
+          }
+          .reset {
+            grid-column: 1/3;
+            padding: 9px 22px 15px;
+            @media only screen and (min-width: 1024px) {
+              padding: 11px 29px 13px;
+            }
+          }
+          .equally {
+            padding: 9px 22px 15px;
+            grid-column: 3/5;
+            background-color: map-get($color, theme1, key, redKeyBackground);
+            box-shadow: map-get($color, theme1, key, redKeyShadow);
+            font-size: map-get($font, size, mobileSecond);
+            line-height: map-get($font, height, mobileSecond);
+            color: map-get($color, theme1, text, white);
+            @media only screen and (min-width: 1024px) {
+              padding: 11px 29px 13px;
+              &:hover {
+                background-color: map-get(
+                  $color,
+                  theme1,
+                  background,
+                  circleHover
+                );
+                cursor: $cursor;
+              }
+            }
+          }
         }
       }
     }
   }
-  @media (prefers-color-scheme: light) {
-    .light {
-      background-color: map-get($color, theme2, background, main);
-      main {
-        header {
-          color: map-get($color, theme2, text, yellowKey);
+  // @media (prefers-color-scheme: light) {
+  .light {
+    background-color: map-get($color, theme2, background, main);
+    main {
+      header {
+        color: map-get($color, theme2, text, yellowKey);
+        .toggle {
+          .circleBox2 {
+            .circle2 {
+              background-color: map-get(
+                $color,
+                theme2,
+                key,
+                orangeKeyBackground
+              );
+              @media only screen and (min-width: 1024px) {
+                &:hover {
+                  background-color: map-get(
+                    $color,
+                    theme1,
+                    background,
+                    circleHover
+                  );
+                }
+              }
+            }
+          }
         }
+      }
+      .calculator {
         input {
           background-color: map-get($color, theme2, background, result);
           color: map-get($color, theme2, text, yellowKey);
-          .circle {
-            background-color: map-get($color, theme2, key, orangeKeyBackground);
-          }
         }
         .keypad {
           background-color: map-get($color, theme2, background, keypad);
@@ -141,35 +249,71 @@
             background-color: map-get($color, theme2, key, grayKeyBackground);
             color: map-get($color, theme2, text, yellowKey);
             box-shadow: map-get($color, theme2, key, grayKeyShadow);
+            @media only screen and (min-width: 1024px) {
+              &:hover {
+                background-color: map-get($color, theme2, text, white);
+              }
+            }
           }
           .del,
           .reset {
             background-color: map-get($color, theme2, key, blueKeyBackground);
             box-shadow: map-get($color, theme2, key, blueKeyShadow);
             color: map-get($color, theme2, text, white);
+            @media only screen and (min-width: 1024px) {
+              &:hover {
+                background-color: map-get($color, theme2, key, resetHover);
+              }
+            }
           }
           .equally {
             background-color: map-get($color, theme2, key, orangeKeyBackground);
             box-shadow: map-get($color, theme2, key, orangeKeyShadow);
             color: map-get($color, theme2, text, white);
+            @media only screen and (min-width: 1024px) {
+              &:hover {
+                background-color: map-get(
+                  $color,
+                  theme2,
+                  background,
+                  circleHover
+                );
+              }
+            }
           }
         }
       }
     }
   }
-  @media (prefers-color-scheme: dark) {
-    .dark {
-      background-color: map-get($color, theme3, background, main);
-      main {
-        header {
-          color: map-get($color, theme3, text, yellowKey);
+  // }
+  // @media (prefers-color-scheme: dark) {
+  .dark {
+    background-color: map-get($color, theme3, background, main);
+    main {
+      header {
+        color: map-get($color, theme3, text, yellowKey);
+        .toggle {
+          .circleBox3 {
+            .circle3 {
+              background-color: map-get($color, theme3, key, cyanKeyBackground);
+              @media only screen and (min-width: 1024px) {
+                &:hover {
+                  background-color: map-get(
+                    $color,
+                    theme3,
+                    background,
+                    circleHover
+                  );
+                }
+              }
+            }
+          }
         }
+      }
+      .calculator {
         input {
           background-color: map-get($color, theme3, background, keypad);
           color: map-get($color, theme3, text, yellowKey);
-          .circle {
-            background-color: map-get($color, theme3, key, cyanKeyBackground);
-          }
         }
         .keypad {
           background-color: map-get($color, theme3, background, keypad);
@@ -177,6 +321,11 @@
             background-color: map-get($color, theme3, key, violetKeyBackground);
             color: map-get($color, theme3, text, yellowKey);
             box-shadow: map-get($color, theme3, key, violetKeyShadow);
+            @media only screen and (min-width: 1024px) {
+              &:hover {
+                background-color: map-get($color, theme3, key, buttonHover);
+              }
+            }
           }
           .del,
           .reset {
@@ -188,14 +337,30 @@
             );
             box-shadow: map-get($color, theme3, key, magentaKeyShadow);
             color: map-get($color, theme3, text, white);
+            @media only screen and (min-width: 1024px) {
+              &:hover {
+                background-color: map-get($color, theme3, key, resetHover);
+              }
+            }
           }
           .equally {
             background-color: map-get($color, theme3, key, cyanKeyBackground);
             box-shadow: map-get($color, theme3, key, cyanKeyShadow);
             color: map-get($color, theme3, text, blueKey);
+            @media only screen and (min-width: 1024px) {
+              &:hover {
+                background-color: map-get(
+                  $color,
+                  theme3,
+                  background,
+                  circleHover
+                );
+              }
+            }
           }
         }
       }
     }
   }
 }
+// }
