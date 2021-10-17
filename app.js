@@ -45,22 +45,18 @@ keypad.addEventListener('click', function (e) {
 
   const key = e.target;
   const keyValue = e.target.textContent;
-  console.log(`keyValue: ${keyValue}`);
 
   if (key.classList.contains('number')) {
     currentNumber += keyValue;
-    console.log(`currentNumber: ${currentNumber}`);
     input.value = Number(currentNumber).toLocaleString();
   }
 
   if (key.classList.contains('operator')) {
-    console.log(currentOperation);
     if (currentNumber) {
       calculate(Number(currentNumber));
     }
     currentOperation = key.textContent;
     currentNumber = '';
-    console.log(currentNumber);
   }
 
   if (key.classList.contains('reset')) {
