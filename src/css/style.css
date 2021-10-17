@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+* body {
+  display: flex;
+  background-color: #3a4764;
+  justify-content: center;
+}
+* body main {
+  max-width: 540px;
+  padding: 28px 24px 31px 24px;
+}
+@media only screen and (min-width: 1024px) {
+  * body main {
+    padding: 96px 0px 0px 0px;
+  }
+}
+* body main header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+* body main header h1 {
+  font-size: 32px;
+  line-height: 36px;
+}
+@media only screen and (min-width: 1024px) {
+  * body main header h1 {
+    align-self: flex-end;
+  }
+}
+* body main header .themeBox {
+  font-size: 12px;
+  line-height: 13px;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: ". numbers" "theme toggle";
+}
+* body main header .themeBox .theme {
+  grid-area: theme;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  justify-self: flex-end;
+  align-self: center;
+}
+* body main header .themeBox .numbers {
+  grid-area: numbers;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  margin-left: 3px;
+}
+* body main header .themeBox .numbers .notVisible {
+  visibility: hidden;
+}
+* body main header .themeBox .toggle {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  grid-area: toggle;
+  width: 71px;
+  height: 26px;
+  background-color: #232c43;
+  border-radius: 13px;
+}
+* body main header .themeBox .toggle .circleBox1,
+* body main header .themeBox .toggle .circleBox2,
+* body main header .themeBox .toggle .circleBox3 {
+  height: 16px;
+  width: 16px;
+}
+@media only screen and (min-width: 1024px) {
+  * body main header .themeBox .toggle .circleBox1,
+* body main header .themeBox .toggle .circleBox2,
+* body main header .themeBox .toggle .circleBox3 {
+    cursor: url("/assets/pointer.png"), pointer;
+  }
+}
+* body main header .themeBox .toggle .circleBox1 .circle1,
+* body main header .themeBox .toggle .circleBox1 .circle2,
+* body main header .themeBox .toggle .circleBox1 .circle3,
+* body main header .themeBox .toggle .circleBox2 .circle1,
+* body main header .themeBox .toggle .circleBox2 .circle2,
+* body main header .themeBox .toggle .circleBox2 .circle3,
+* body main header .themeBox .toggle .circleBox3 .circle1,
+* body main header .themeBox .toggle .circleBox3 .circle2,
+* body main header .themeBox .toggle .circleBox3 .circle3 {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+}
+* body main header .themeBox .toggle .circleBox1 .circle1,
+* body main header .themeBox .toggle .circleBox2 .circle1,
+* body main header .themeBox .toggle .circleBox3 .circle1 {
+  background-color: #d03f2f;
+}
+@media only screen and (min-width: 1024px) {
+  * body main header .themeBox .toggle .circleBox1 .circle1:hover,
+* body main header .themeBox .toggle .circleBox2 .circle1:hover,
+* body main header .themeBox .toggle .circleBox3 .circle1:hover {
+    background-color: #f96c5d;
+    cursor: url("/assets/pointer.png"), pointer;
+  }
+}
+* body main header .themeBox .toggle .circleBox1 .notVisible,
+* body main header .themeBox .toggle .circleBox2 .notVisible,
+* body main header .themeBox .toggle .circleBox3 .notVisible {
+  visibility: hidden;
+}
+* body main .calculator input {
+  margin: 32px 0px 24px 0px;
+  width: 100%;
+  background-color: #182034;
+  color: white;
+  border-radius: 10px;
+  text-align: right;
+  font-size: 32px;
+  line-height: 36px;
+  padding: 26px 24px;
+  border: none;
+  outline: none;
+  caret-color: transparent;
+}
+@media only screen and (min-width: 1024px) {
+  * body main .calculator input {
+    font-size: 48px;
+    padding: 38px 32px 36px;
+  }
+}
+* body main .calculator .keypad {
+  padding: 22px;
+  border-radius: 10px;
+  background-color: #232c43;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 13px;
+}
+@media only screen and (min-width: 1024px) {
+  * body main .calculator .keypad {
+    padding: 32px 32px 32px 30px;
+    gap: 24px 25px;
+  }
+}
+* body main .calculator .keypad button {
+  padding: 10px 10px 15px;
+  background-color: #eae3dc;
+  color: #444b5a;
+  box-shadow: inset 0px -4px 0px #b4a597;
+  border: none;
+  border-radius: 5px;
+  font-size: 28px;
+  line-height: 39px;
+  font-weight: bold;
+}
+@media only screen and (min-width: 1024px) {
+  * body main .calculator .keypad button {
+    padding: 10px 13px 14px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+  * body main .calculator .keypad button:hover {
+    background-color: white;
+    cursor: url("/assets/pointer.png"), pointer;
+  }
+}
+* body main .calculator .keypad .del,
+* body main .calculator .keypad .reset {
+  background-color: #637097;
+  box-shadow: inset 0px -4px 0px #404e72;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: white;
+}
+@media only screen and (min-width: 1024px) {
+  * body main .calculator .keypad .del,
+* body main .calculator .keypad .reset {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  * body main .calculator .keypad .del:hover,
+* body main .calculator .keypad .reset:hover {
+    background-color: #a3b3e1;
+    cursor: url("/assets/pointer.png"), pointer;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * body main .calculator .keypad .del {
+    padding: 11px 13px 13px;
+  }
+}
+* body main .calculator .keypad .reset {
+  grid-column: 1/3;
+  padding: 9px 22px 15px;
+}
+@media only screen and (min-width: 1024px) {
+  * body main .calculator .keypad .reset {
+    padding: 11px 29px 13px;
+  }
+}
+* body main .calculator .keypad .equally {
+  padding: 9px 22px 15px;
+  grid-column: 3/5;
+  background-color: #d03f2f;
+  box-shadow: inset 0px -4px 0px #93261a;
+  font-size: 16px;
+  line-height: 18px;
+  color: white;
+}
+@media only screen and (min-width: 1024px) {
+  * body main .calculator .keypad .equally {
+    padding: 11px 29px 13px;
+  }
+  * body main .calculator .keypad .equally:hover {
+    background-color: #f96c5d;
+    cursor: url("/assets/pointer.png"), pointer;
+  }
+}
+* .light {
+  background-color: #e6e6e6;
+}
+* .light main header {
+  color: #35352c;
+}
+* .light main header .toggle .circleBox2 .circle2 {
+  background-color: #ca5502;
+}
+@media only screen and (min-width: 1024px) {
+  * .light main header .toggle .circleBox2 .circle2:hover {
+    background-color: #f96c5d;
+  }
+}
+* .light main .calculator input {
+  background-color: #ededed;
+  color: #35352c;
+}
+* .light main .calculator .keypad {
+  background-color: #d1cccc;
+}
+* .light main .calculator .keypad button {
+  background-color: #e5e4e1;
+  color: #35352c;
+  box-shadow: inset 0px -4px 0px #a69d91;
+}
+@media only screen and (min-width: 1024px) {
+  * .light main .calculator .keypad button:hover {
+    background-color: white;
+  }
+}
+* .light main .calculator .keypad .del,
+* .light main .calculator .keypad .reset {
+  background-color: #377f86;
+  box-shadow: inset 0px -4px 0px #1b5f65;
+  color: white;
+}
+@media only screen and (min-width: 1024px) {
+  * .light main .calculator .keypad .del:hover,
+* .light main .calculator .keypad .reset:hover {
+    background-color: #62b6bc;
+  }
+}
+* .light main .calculator .keypad .equally {
+  background-color: #ca5502;
+  box-shadow: inset 0px -4px 0px #893901;
+  color: white;
+}
+@media only screen and (min-width: 1024px) {
+  * .light main .calculator .keypad .equally:hover {
+    background-color: #ff8b38;
+  }
+}
+* .dark {
+  background-color: #160628;
+}
+* .dark main header {
+  color: #ffe53d;
+}
+* .dark main header .toggle .circleBox3 .circle3 {
+  background-color: #00e0d1;
+}
+@media only screen and (min-width: 1024px) {
+  * .dark main header .toggle .circleBox3 .circle3:hover {
+    background-color: #94fff8;
+  }
+}
+* .dark main .calculator input {
+  background-color: #1d0934;
+  color: #ffe53d;
+}
+* .dark main .calculator .keypad {
+  background-color: #1d0934;
+}
+* .dark main .calculator .keypad button {
+  background-color: #341c4f;
+  color: #ffe53d;
+  box-shadow: inset 0px -4px 0px #871c9c;
+}
+@media only screen and (min-width: 1024px) {
+  * .dark main .calculator .keypad button:hover {
+    background-color: #6c34ad;
+  }
+}
+* .dark main .calculator .keypad .del,
+* .dark main .calculator .keypad .reset {
+  background-color: #58077d;
+  box-shadow: inset 0px -4px 0px #bc15f4;
+  color: white;
+}
+@media only screen and (min-width: 1024px) {
+  * .dark main .calculator .keypad .del:hover,
+* .dark main .calculator .keypad .reset:hover {
+    background-color: #8531af;
+  }
+}
+* .dark main .calculator .keypad .equally {
+  background-color: #00e0d1;
+  box-shadow: inset 0px -4px 0px #6cf9f2;
+  color: #1b2428;
+}
+@media only screen and (min-width: 1024px) {
+  * .dark main .calculator .keypad .equally:hover {
+    background-color: #94fff8;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

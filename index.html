@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>calc</h1>
+        <div class="themeBox">
+          <span class="theme">theme</span>
+          <div class="numbers">
+            <span class="number1">1</span>
+            <span class="number2">2</span>
+            <span class="number3">3</span>
+          </div>
+          <div class="toggle">
+            <div class="circleBox1">
+              <div class="circle1"></div>
+            </div>
+            <div class="circleBox2">
+              <div class="circle2 notVisible"></div>
+            </div>
+            <div class="circleBox3">
+              <div class="circle3 notVisible"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="calculator">
+        <input
+          type="text"
+          class="result"
+          value="0"
+          onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        />
+        <div class="keypad">
+          <button class="number" type="button">7</button>
+          <button class="number" type="button">8</button>
+          <button class="number" type="button">9</button>
+          <button class="del" type="button">del</button>
+          <button class="number" type="button">4</button>
+          <button class="number" type="button">5</button>
+          <button class="number" type="button">6</button>
+          <button class="operator" type="button">+</button>
+          <button class="number" type="button">1</button>
+          <button class="number" type="button">2</button>
+          <button class="number" type="button">3</button>
+          <button class="operator" type="button">-</button>
+          <button class="number decimal" type="button">.</button>
+          <button class="number" type="button">0</button>
+          <button class="operator" type="button">/</button>
+          <button class="operator" type="button">x</button>
+          <button class="reset" type="button">reset</button>
+          <button class="equally operator" type="button">=</button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="app.js"></script>
+</html>
